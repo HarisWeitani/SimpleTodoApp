@@ -4,17 +4,20 @@ import 'package:simple_todo_app/features/home/bloc/check_box_state.dart';
 
 class CheckBoxBloc extends Bloc<CheckBoxEvent, CheckBoxState> {
 
-
-
   CheckBoxBloc(): super(const CheckBoxChecked(false)) {
     on<ToggleCheckBox>((event, emit) {
-      emit(CheckBoxChecked(!state.isChecked));
+      emit(CheckBoxChecked(state.isChecked));
+      emit(CheckBoxUnChecked(!state.isChecked));
     },
 
     );
   }
 
   void onItemClicked(ToggleCheckBox event, Emitter<CheckBoxState> emit) async {
-    emit(CheckBoxChecked(!state.isChecked));
+    if(state.isChecked) {
+      emit(CheckBoxChecked(state.isChecked));
+    } else if(!state.isChecked) {
+      emit(CheckBoxUnChecked(!state.isChecked));
+    }
   }
 }

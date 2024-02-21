@@ -1,7 +1,7 @@
-
 abstract class CheckBoxEvent{
   const CheckBoxEvent();
-
 }
 
-class ToggleCheckBox extends CheckBoxEvent {}
+class ToggleCheckBox extends CheckBoxEvent {
+
+}

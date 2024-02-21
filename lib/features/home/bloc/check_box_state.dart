@@ -7,3 +7,7 @@ abstract class CheckBoxState {
 class CheckBoxChecked extends CheckBoxState{
   const CheckBoxChecked(super.isChecked);
 }
+
+class CheckBoxUnChecked extends CheckBoxState{
+  const CheckBoxUnChecked(super.isChecked);
+}
